@@ -1,5 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#0061B7</color> <!-- ABA Blue -->
+    <color name="colorPrimaryVariant">#004A96</color> <!-- Darker Blue -->
+    <color name="colorOnPrimary">#FFFFFF</color> <!-- White for text/icons on primary -->
+
+    <!-- Secondary Colors -->
+    <color name="colorSecondary">#00A86B</color> <!-- ABA Green -->
+    <color name="colorSecondaryVariant">#00894B</color> <!-- Darker Green -->
+    <color name="colorOnSecondary">#FFFFFF</color> <!-- White for text/icons on secondary -->
+
+    <!-- Background & Surface Colors -->
+    <color name="colorBackground">#F5F5F5</color> <!-- Light Gray Background -->
+    <color name="colorSurface">#FFFFFF</color> <!-- White Surface for cards/buttons -->
+
+    <!-- Text Colors -->
+    <color name="colorOnBackground">#000000</color> <!-- Black Text on background -->
+    <color name="colorOnSurface">#000000</color> <!-- Black Text on Surface -->
+
+    <!-- Error Colors -->
+    <color name="colorError">#B00020</color> <!-- Red Error Color -->
+    <color name="colorOnError">#FFFFFF</color> <!-- White Text on Error -->
 </resources>
