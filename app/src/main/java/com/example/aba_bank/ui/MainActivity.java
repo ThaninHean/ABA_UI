@@ -19,7 +19,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aba_bank.R;
 import com.example.aba_bank.ui.adapter.NewsPromotionsAdapter;
+import com.example.aba_bank.ui.adapter.ServiceAdapter;
 import com.example.aba_bank.ui.model.NewsPromotions;
+import com.example.aba_bank.ui.model.Services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +29,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private ConstraintLayout constraintLayoutProfile;
     private NewsPromotionsAdapter adapter;
-    private RecyclerView recyclerView;
+    private ServiceAdapter serviceAdapter;
+    private RecyclerView recyclerViewNews,recyclerViewExplore;
     private boolean isBalanceVisible = true;
 
     @Override
@@ -35,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content), (v, insets) -> {
             v.setPadding(0, insets.getSystemWindowInsetTop(), 0, 0);
             return insets;
@@ -47,9 +49,30 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
 
+
+        // CAll  methods
         openProfileActivity();
         toggleBalanceVisibility();
-        initRecyclerView();
+        initNewsRecyclerView();
+        initServiceRecyclerView();
+
+
+    }
+
+    private void initServiceRecyclerView() {
+        recyclerViewExplore = findViewById(R.id.recyclerViewExplore);
+        recyclerViewExplore.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        serviceAdapter = new ServiceAdapter(this, getServicesImage());
+        recyclerViewExplore.setAdapter(serviceAdapter);
+    }
+    private List<Services> getServicesImage(){
+        List<Services> servicesList = new ArrayList<>();
+        servicesList.add(new Services(R.drawable.vet, "VET Express"));
+        servicesList.add(new Services(R.drawable.starbucks, "Starbucks"));
+        servicesList.add(new Services(R.drawable.cinema, "Cinema Ticket"));
+        servicesList.add(new Services(R.drawable.redbus, "redBus Cambodia"));
+        servicesList.add(new Services(R.drawable.bookmebus, "BookMeBus"));
+        return servicesList;
     }
 
     public void toggleBalanceVisibility() {
@@ -82,13 +105,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void initRecyclerView() {
-        recyclerView = findViewById(R.id.recyclerViewNews);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
+
+    private void initNewsRecyclerView() {
+        recyclerViewNews = findViewById(R.id.recyclerViewNews);
+        recyclerViewNews.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         List<NewsPromotions> list = getNewPromotionsImage();
         adapter = new NewsPromotionsAdapter(this, list);
-        recyclerView.setAdapter(adapter);
+        recyclerViewNews.setAdapter(adapter);
     }
 
     private List<NewsPromotions> getNewPromotionsImage() {

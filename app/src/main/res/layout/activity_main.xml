@@ -52,7 +52,8 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/main_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -61,7 +62,8 @@
             android:layout_height="match_parent"
             android:background="#014262"
             android:paddingStart="5dp"
-            android:paddingEnd="5dp">
+            android:paddingEnd="5dp"
+            android:paddingBottom="10dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -411,11 +413,12 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textExplore"
-                        android:layout_width="290dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
@@ -427,11 +430,12 @@
 
                     <TextView
                         android:id="@+id/viewAll"
-                        android:layout_width="wrap_content"
+                        android:layout_width="5dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="5dp"
                         android:layout_weight="1"
                         android:text="VIEW ALL >"
+                        android:textAlignment="center"
                         android:textColor="@color/colorOnPrimary"
                         android:textStyle="bold" />
 
@@ -442,14 +446,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginBottom="20dp"
                     android:background="@drawable/bg_news_promotions_recyclerview"
                     android:orientation="horizontal"
                     android:paddingStart="3dp"
                     android:paddingEnd="3dp" />
 
             </LinearLayout>
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
