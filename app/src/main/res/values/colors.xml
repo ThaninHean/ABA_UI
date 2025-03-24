@@ -12,6 +12,7 @@
     <!-- Background & Surface Colors -->
     <color name="colorBackground">#F5F5F5</color> <!-- Light Gray Background -->
     <color name="colorSurface">#FFFFFF</color> <!-- White Surface for cards/buttons -->
+    <color name="gray">#808080</color> <!-- Gray Text -->
 
     <!-- Text Colors -->
     <color name="colorOnBackground">#000000</color> <!-- Black Text on background -->

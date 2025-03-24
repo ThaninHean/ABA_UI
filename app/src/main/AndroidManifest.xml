@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Aba_Bank"
         tools:targetApi="31">
         <activity
+            android:name=".ui.ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.QrActivity"
             android:exported="false" />
         <activity
