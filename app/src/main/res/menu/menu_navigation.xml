@@ -16,5 +16,5 @@
         android:id="@+id/ic_qr"
         android:title="QR"
         android:icon="@drawable/ic_qr"
-        app:showAsAction="always" />/>
+        app:showAsAction="always" />
 </menu>

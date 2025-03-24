@@ -1,77 +1,387 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="10dp"
     android:background="#014262"
     tools:context=".ui.MainActivity">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
+    <!--  AppBarLayout with Toolbar  -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="#014262"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/menu_navigation"
-        app:titleTextColor="@color/design_default_color_surface">
+        android:layout_marginTop="30dp"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#014262"
+            app:layout_scrollFlags="enterAlways|noScroll"
+            app:menu="@menu/menu_navigation"
+            app:title=""
+            app:titleTextColor="@android:color/white">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="50sp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/profile"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/profile"
+                android:textColor="@color/colorOnPrimary"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <!--  Scrollable Content  -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/main_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/LayoutProfile"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="7dp">
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#014262"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_image"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="start|center_vertical"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/profile"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:backgroundTint="#3CDEDEE4"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="10dp"
-                android:orientation="vertical"
-                android:gravity="center_vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profile_image"
                 app:layout_constraintTop_toTopOf="parent">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="7.5dp"
+                    android:background="@drawable/bg_card">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$10,000"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_marginStart="10dp"
+                            android:background="@drawable/bg_eye"
+                            app:srcCompat="@drawable/ic_eyes" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Default" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Savings" />
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:paddingEnd="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/firstLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="10dp"
+                            android:orientation="horizontal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                app:srcCompat="@drawable/ic_receive_money" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Receive Money"
+                                android:textColor="@color/colorOnSurface"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="50dp"
+                            android:orientation="horizontal"
+                            app:layout_constraintStart_toEndOf="@+id/firstLayout"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                app:srcCompat="@drawable/ic_send_money" />
+
+                            <TextView
+                                android:layout_width="116dp"
+                                android:layout_height="wrap_content"
+                                android:text="Send Money"
+                                android:textColor="@color/colorOnSurface"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gridLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/bg_all_dash_grid"
+                android:elevation="5dp"
+                android:padding="3dp"
+                app:columnCount="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardView"
+                app:rowCount="2">
+
+                <LinearLayout
+                    android:id="@+id/accountLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2.5dp"
+                    android:background="@drawable/bg_grid"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_account" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Accounts"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorOnPrimary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cardLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2.5dp"
+                    android:background="@drawable/bg_grid"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_cards" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cards"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorOnPrimary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/paymentsLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2.5dp"
+                    android:background="@drawable/bg_grid"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_payments" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payments"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorOnPrimary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/qrLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2.5dp"
+                    android:background="@drawable/bg_grid"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_scan" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ABA Scan"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorOnPrimary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/favoritesLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2.5dp"
+                    android:background="@drawable/bg_grid"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_favorites" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Favorites"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorOnPrimary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/transferLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2.5dp"
+                    android:background="@drawable/bg_grid"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_transfers" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transfers"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorOnPrimary" />
+                </LinearLayout>
+            </androidx.gridlayout.widget.GridLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/gridLayout">
+
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Hello, Thanin!"
-                    android:textColor="@color/colorOnSecondary"
-                    android:textSize="14sp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="View Profile>"
-                    android:textSize="12dp"
-                    android:textColor="@color/gray" />
-
             </LinearLayout>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                tools:layout_editor_absoluteX="5dp" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <!-- Circular Image inside the Toolbar -->
-
-
-    </androidx.appcompat.widget.Toolbar>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.aba_bank.R;
@@ -23,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the layout
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
+
 
         // Initialize profile layout interaction
         openProfileActivity();
@@ -31,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
     // Intent to open Profile Activity
     public void openProfileActivity() {
-        constraintLayoutProfile = findViewById(R.id.LayoutProfile);
-        constraintLayoutProfile.setOnClickListener(v -> {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setOnClickListener(v -> {
             // Open Profile Activity when the layout is clicked
             Intent intent = new Intent(this, ProfileActivity.class);
             startActivity(intent);
