@@ -10,7 +10,7 @@
         android:id="@+id/imageService"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         android:background="@drawable/bg_list"
         tools:src="@drawable/vet" />
 
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:maxEms="2"
+        android:maxLines="@integer/material_motion_duration_short_1"
         android:textAlignment="center"
         android:textColor="@color/colorOnPrimary"
         android:textSize="12sp"

@@ -33,6 +33,7 @@ android {
 
 dependencies {
     implementation ("com.github.bumptech.glide:glide:4.15.1")
+    implementation(libs.legacy.support.v4)
     annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
     // circleImageView
     implementation("de.hdodenhof:circleimageview:3.1.0")

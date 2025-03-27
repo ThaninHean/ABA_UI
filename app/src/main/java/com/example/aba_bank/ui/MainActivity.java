@@ -68,9 +68,12 @@ public class MainActivity extends AppCompatActivity {
     private List<Services> getServicesImage(){
         List<Services> servicesList = new ArrayList<>();
         servicesList.add(new Services(R.drawable.vet, "VET Express"));
-        servicesList.add(new Services(R.drawable.starbucks, "Starbucks"));
-        servicesList.add(new Services(R.drawable.cinema, "Cinema Ticket"));
-        servicesList.add(new Services(R.drawable.redbus, "redBus Cambodia"));
+        servicesList.add(new Services(R.drawable.bookmebus, "BookMeBus"));
+        servicesList.add(new Services(R.drawable.vet, "VET Express"));
+        servicesList.add(new Services(R.drawable.bookmebus, "BookMeBus"));
+        servicesList.add(new Services(R.drawable.vet, "VET Express"));
+        servicesList.add(new Services(R.drawable.bookmebus, "BookMeBus"));
+        servicesList.add(new Services(R.drawable.vet, "VET Express"));
         servicesList.add(new Services(R.drawable.bookmebus, "BookMeBus"));
         return servicesList;
     }

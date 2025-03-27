@@ -36,9 +36,10 @@
                 app:civ_border_width="2dp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:fontFamily="sans-serif-medium"
                 android:text="@string/profile"
                 android:textColor="@color/colorOnPrimary"
                 android:textSize="14dp"
@@ -181,6 +182,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Receive Money"
+                                android:fontFamily="sans-serif-medium"
                                 android:textColor="@color/colorOnSurface"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -204,6 +206,7 @@
                                 android:layout_width="116dp"
                                 android:layout_height="wrap_content"
                                 android:text="Send Money"
+                                android:fontFamily="sans-serif-medium"
                                 android:textColor="@color/colorOnSurface"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -236,6 +239,7 @@
                     android:background="@drawable/bg_grid"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:gravity="center"
+                    android:fontFamily="sans-serif-medium"
                     android:orientation="vertical"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1">
@@ -249,8 +253,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Accounts"
+                        android:fontFamily="sans-serif-medium"
                         android:textAlignment="center"
-                        android:textColor="@color/colorOnPrimary" />
+                        android:textColor="@color/colorOnSurface" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -274,8 +279,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Cards"
+                        android:fontFamily="sans-serif-medium"
                         android:textAlignment="center"
-                        android:textColor="@color/colorOnPrimary" />
+                        android:textColor="@color/colorOnSurface" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -298,9 +304,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
                         android:text="Payments"
                         android:textAlignment="center"
-                        android:textColor="@color/colorOnPrimary" />
+                        android:textColor="@color/colorOnSurface" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -323,9 +330,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
                         android:text="ABA Scan"
                         android:textAlignment="center"
-                        android:textColor="@color/colorOnPrimary" />
+                        android:textColor="@color/colorOnSurface" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -348,9 +356,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
                         android:text="Favorites"
                         android:textAlignment="center"
-                        android:textColor="@color/colorOnPrimary" />
+                        android:textColor="@color/colorOnSurface" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -373,9 +382,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
                         android:text="Transfers"
                         android:textAlignment="center"
-                        android:textColor="@color/colorOnPrimary" />
+                        android:textColor="@color/colorOnSurface" />
                 </LinearLayout>
             </androidx.gridlayout.widget.GridLayout>
 

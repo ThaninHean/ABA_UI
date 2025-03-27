@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Aba_Bank</string>
-    <string name="profile">Hello, Thanin<br/><font color="#808080">\nView profile</font></string>
+    <string name="profile">Hello, Thanin<br /><font color="#808080">\nView profile</font></string>
 </resources>

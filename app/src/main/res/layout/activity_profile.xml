@@ -81,6 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Thanin HEAN"
+            android:fontFamily="sans-serif-medium"
             android:textColor="@color/colorOnPrimary"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/circleImageView"
@@ -94,6 +95,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="78dp"
             android:paddingBottom="10dp"
+            android:fontFamily="sans-serif-medium"
             android:text="APP ID: 1234567"
             android:textColor="@color/colorOnPrimary"
             android:textSize="14sp"
@@ -126,7 +128,7 @@
             android:clickable="true"
             android:elevation="5dp"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="10dp"
+            app:cardCornerRadius="13dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -149,6 +151,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="My Profile"
+                    android:fontFamily="sans-serif-medium"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -169,7 +172,7 @@
             android:clickable="true"
             android:elevation="5dp"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="10dp"
+            app:cardCornerRadius="13dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardProfile">
@@ -192,6 +195,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="Security"
+                    android:fontFamily="sans-serif-medium"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -212,7 +216,7 @@
             android:clickable="true"
             android:elevation="5dp"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="10dp"
+            app:cardCornerRadius="13dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardSecurity">
@@ -234,6 +238,7 @@
                     android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:fontFamily="sans-serif-medium"
                     android:text="Language                            English"
                     android:textSize="16sp" />
 
@@ -255,7 +260,7 @@
             android:clickable="true"
             android:elevation="5dp"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="10dp"
+            app:cardCornerRadius="13dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardLanguage">
@@ -278,6 +283,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="Contact Us"
+                    android:fontFamily="sans-serif-medium"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -298,7 +304,7 @@
             android:clickable="true"
             android:elevation="5dp"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="10dp"
+            app:cardCornerRadius="13dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardContact">
@@ -322,6 +328,7 @@
                     android:layout_marginStart="10dp"
                     android:text="Terms &amp; Conditions"
                     android:textSize="16sp"
+                    android:fontFamily="sans-serif-medium"
                     tools:ignore="HardcodedText" />
 
                 <ImageView
