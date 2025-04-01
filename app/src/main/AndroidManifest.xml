@@ -16,10 +16,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ui.model.ProfileDeatialActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.ProfileDetailActivity"
+            android:name=".ui.ProfileDeatialActivity"
             android:exported="false" />
         <activity
             android:name=".ui.ProfileActivity"

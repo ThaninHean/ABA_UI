@@ -168,6 +168,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginEnd="10dp"
+                            android:gravity="center"
                             android:orientation="horizontal"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
@@ -176,13 +177,15 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="5dp"
+                                android:padding="2dp"
+                                android:background="@drawable/bg_receive"
                                 app:srcCompat="@drawable/ic_receive_money" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Receive Money"
                                 android:fontFamily="sans-serif-medium"
+                                android:text="Receive Money"
                                 android:textColor="@color/colorOnSurface"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -193,6 +196,7 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="60dp"
                             android:orientation="horizontal"
+                            android:gravity="center"
                             app:layout_constraintStart_toEndOf="@+id/firstLayout"
                             app:layout_constraintTop_toTopOf="parent">
 
@@ -200,6 +204,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="5dp"
+                                android:background="@drawable/bg_send"
+                                android:padding="2dp"
                                 app:srcCompat="@drawable/ic_send_money" />
 
                             <TextView

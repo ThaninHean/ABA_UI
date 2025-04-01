@@ -1,4 +1,4 @@
-package com.example.aba_bank.ui.model;
+package com.example.aba_bank.ui;
 
 import android.os.Bundle;
 
