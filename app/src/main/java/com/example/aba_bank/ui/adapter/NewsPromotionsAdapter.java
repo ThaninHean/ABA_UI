@@ -17,6 +17,7 @@ import java.util.List;
 public class NewsPromotionsAdapter extends RecyclerView.Adapter<NewsPromotionsAdapter.ViewHolder> {
     private Context context;
     private List<NewsPromotions> newsPromotionsList;
+    private OnItemClickListener onItemClickListener; // Add click listener
 
     public NewsPromotionsAdapter(Context context, List<NewsPromotions> newsPromotionsList) {
         this.context = context;
@@ -25,15 +26,22 @@ public class NewsPromotionsAdapter extends RecyclerView.Adapter<NewsPromotionsAd
 
     @NonNull
     @Override
-    public NewsPromotionsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_news_promotions, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NewsPromotionsAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         NewsPromotions newsPromotions = newsPromotionsList.get(position);
         holder.newsImage.setImageResource(newsPromotions.getImageNews());
+
+        // Handle item click
+        holder.itemView.setOnClickListener(v -> {
+            if (onItemClickListener != null) {
+                onItemClickListener.onItemClick(position); // Use correct position
+            }
+        });
     }
 
     @Override
@@ -41,12 +49,22 @@ public class NewsPromotionsAdapter extends RecyclerView.Adapter<NewsPromotionsAd
         return newsPromotionsList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView newsImage;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             newsImage = itemView.findViewById(R.id.newsImage);
         }
+    }
+
+    // Define interface for click listener
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    // Method to set the click listener
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.onItemClickListener = listener;
     }
 }

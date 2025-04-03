@@ -31,10 +31,11 @@ public class MainActivity extends AppCompatActivity {
     private ConstraintLayout constraintLayoutProfile;
     private NewsPromotionsAdapter adapter;
     private ServiceAdapter serviceAdapter;
-    private RecyclerView recyclerViewNews,recyclerViewExplore;
+    private RecyclerView recyclerViewNews, recyclerViewExplore;
     private boolean isBalanceVisible = true;
     private Handler handler = new Handler();
-    private int currentPosterion;
+    private int currentPosition = 0;
+    private List<NewsPromotions> newsList; // Store images in a variable to prevent recreation
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,34 +53,41 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
 
-
-        // CAll  methods
-        openProfileActivity();
+        // Initialize methods
         toggleBalanceVisibility();
+        openProfileActivity();
         initNewsRecyclerView();
         initServiceRecyclerView();
         startAutoScroll();
-
-
+    }
+    public void openProfileActivity() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void startAutoScroll() {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (currentPosterion == getNewPromotionsImage().size() ){
-                    currentPosterion = 0;
+                if (newsList == null || newsList.isEmpty()) return;
+
+                if (currentPosition >= newsList.size()) {
+                    currentPosition = 0;
                 }
-                recyclerViewNews.smoothScrollToPosition(currentPosterion);
-                currentPosterion ++;
+                recyclerViewNews.smoothScrollToPosition(currentPosition);
+                currentPosition++;
                 handler.postDelayed(this, 2000);
             }
-        },2000);
+        }, 2000);
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        handler.removeCallbacksAndMessages(null); // Stop auto-scroll when activity is destroyed
+        handler.removeCallbacksAndMessages(null);
     }
 
     private void initServiceRecyclerView() {
@@ -88,75 +96,63 @@ public class MainActivity extends AppCompatActivity {
         serviceAdapter = new ServiceAdapter(this, getServicesImage());
         recyclerViewExplore.setAdapter(serviceAdapter);
     }
-    private List<Services> getServicesImage(){
+
+    private List<Services> getServicesImage() {
         List<Services> servicesList = new ArrayList<>();
-        servicesList.add(new Services(R.drawable.vet, "VET Express"));
-        servicesList.add(new Services(R.drawable.bookmebus, "BookMeBus"));
-        servicesList.add(new Services(R.drawable.vet, "VET Express"));
-        servicesList.add(new Services(R.drawable.bookmebus, "BookMeBus"));
-        servicesList.add(new Services(R.drawable.vet, "VET Express"));
-        servicesList.add(new Services(R.drawable.bookmebus, "BookMeBus"));
         servicesList.add(new Services(R.drawable.vet, "VET Express"));
         servicesList.add(new Services(R.drawable.bookmebus, "BookMeBus"));
         return servicesList;
     }
 
-    public void toggleBalanceVisibility() {
+    private void toggleBalanceVisibility() {
         ImageView eyeIcon = findViewById(R.id.eyeOn);
         TextView balance = findViewById(R.id.showBalance);
         ImageView balanceImage = findViewById(R.id.balanceImage);
 
+        updateBalanceUI(eyeIcon, balance, balanceImage);
+
+        eyeIcon.setOnClickListener(view -> {
+            isBalanceVisible = !isBalanceVisible;
+            updateBalanceUI(eyeIcon, balance, balanceImage);
+        });
+    }
+
+    private void updateBalanceUI(ImageView eyeIcon, TextView balance, ImageView balanceImage) {
         if (isBalanceVisible) {
             balance.setVisibility(View.VISIBLE);
             balanceImage.setVisibility(View.GONE);
+            balance.setText("$1,000");
             eyeIcon.setImageResource(R.drawable.ic_eyes);
         } else {
             balance.setVisibility(View.GONE);
             balanceImage.setVisibility(View.VISIBLE);
             eyeIcon.setImageResource(R.drawable.ic_eye_off);
         }
-
-        eyeIcon.setOnClickListener(view -> {
-            if (isBalanceVisible) {
-                balance.setVisibility(View.GONE);
-                balanceImage.setVisibility(View.VISIBLE);
-                eyeIcon.setImageResource(R.drawable.ic_eye_off);
-            } else {
-                balance.setVisibility(View.VISIBLE);
-                balanceImage.setVisibility(View.GONE);
-                balance.setText("$1,000");
-                eyeIcon.setImageResource(R.drawable.ic_eyes);
-            }
-            isBalanceVisible = !isBalanceVisible;
-        });
     }
-
-
 
     private void initNewsRecyclerView() {
         recyclerViewNews = findViewById(R.id.recyclerViewNews);
         recyclerViewNews.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        List<NewsPromotions> list = getNewPromotionsImage();
-        adapter = new NewsPromotionsAdapter(this, list);
+
+        // Store images once and reuse them
+        newsList = getNewPromotionsImage();
+        adapter = new NewsPromotionsAdapter(this, newsList);
         recyclerViewNews.setAdapter(adapter);
+
+        // Handle item click
+        adapter.setOnItemClickListener(position -> {
+            Toast.makeText(MainActivity.this, "Clicked item: " + position, Toast.LENGTH_SHORT).show();
+        });
     }
 
     private List<NewsPromotions> getNewPromotionsImage() {
         List<NewsPromotions> list = new ArrayList<>();
-        list.add(new NewsPromotions(R.drawable.image2)); // Drawable resource ID
+        list.add(new NewsPromotions(R.drawable.image2));
         list.add(new NewsPromotions(R.drawable.image3));
         list.add(new NewsPromotions(R.drawable.image4));
         list.add(new NewsPromotions(R.drawable.image5));
         list.add(new NewsPromotions(R.drawable.image6));
         return list;
-    }
-
-    public void openProfileActivity() {
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setOnClickListener(v -> {
-            Intent intent = new Intent(this, ProfileActivity.class);
-            startActivity(intent);
-        });
     }
 
     @Override
@@ -169,7 +165,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.chat) {
+        if (id == android.R.id.home) {
+            openProfileActivity();
+            return true;
+        } else if (id == R.id.chat) {
             openActivity(ChatActivity.class, "Chat");
         } else if (id == R.id.notification) {
             openActivity(NotificationActivity.class, "Notification");
@@ -178,6 +177,11 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+//    private void openProfileActivity() {
+//        Intent intent = new Intent(this, ProfileActivity.class);
+//        startActivity(intent);
+//    }
 
     private void openActivity(Class<?> activityClass, String message) {
         startActivity(new Intent(this, activityClass));
