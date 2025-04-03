@@ -173,19 +173,12 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="5dp"
-                                android:padding="2dp"
-                                android:background="@drawable/bg_receive"
-                                app:srcCompat="@drawable/ic_receive_money" />
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-medium"
                                 android:text="Receive Money"
+                                android:drawableStart="@drawable/ic_receive_money"
                                 android:textColor="@color/colorOnSurface"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -200,18 +193,11 @@
                             app:layout_constraintStart_toEndOf="@+id/firstLayout"
                             app:layout_constraintTop_toTopOf="parent">
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="5dp"
-                                android:background="@drawable/bg_send"
-                                android:padding="2dp"
-                                app:srcCompat="@drawable/ic_send_money" />
-
                             <TextView
                                 android:layout_width="116dp"
                                 android:layout_height="wrap_content"
                                 android:text="Send Money"
+                                android:drawableStart="@drawable/ic_send_money"
                                 android:fontFamily="sans-serif-medium"
                                 android:textColor="@color/colorOnSurface"
                                 android:textSize="15sp"
@@ -422,9 +408,7 @@
                     android:layout_height="120dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/bg_news_promotions_recyclerview"
-                    android:orientation="horizontal"
-                    android:paddingStart="3dp"
-                    android:paddingEnd="3dp" />
+                    android:orientation="horizontal" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -460,7 +444,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewExplore"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="150dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/bg_news_promotions_recyclerview"

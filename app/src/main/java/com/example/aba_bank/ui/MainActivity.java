@@ -2,6 +2,7 @@ package com.example.aba_bank.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private ServiceAdapter serviceAdapter;
     private RecyclerView recyclerViewNews,recyclerViewExplore;
     private boolean isBalanceVisible = true;
+    private Handler handler = new Handler();
+    private int currentPosterion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +58,28 @@ public class MainActivity extends AppCompatActivity {
         toggleBalanceVisibility();
         initNewsRecyclerView();
         initServiceRecyclerView();
+        startAutoScroll();
 
 
+    }
+
+    private void startAutoScroll() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (currentPosterion == getNewPromotionsImage().size() ){
+                    currentPosterion = 0;
+                }
+                recyclerViewNews.smoothScrollToPosition(currentPosterion);
+                currentPosterion ++;
+                handler.postDelayed(this, 2000);
+            }
+        },2000);
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacksAndMessages(null); // Stop auto-scroll when activity is destroyed
     }
 
     private void initServiceRecyclerView() {
