@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Aba_Bank"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+<!--        <activity-->
+<!--            android:name=".ui.ABAAccounts"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".ui.ProfileDeatialActivity"
             android:exported="false" />
@@ -34,7 +37,7 @@
             android:name=".ui.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SplashscreenActivity"
+            android:name=".ui.ABAAccounts"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

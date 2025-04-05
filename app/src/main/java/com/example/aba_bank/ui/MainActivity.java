@@ -185,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void openActivity(Class<?> activityClass, String message) {
         startActivity(new Intent(this, activityClass));
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+
     }
+
 }
