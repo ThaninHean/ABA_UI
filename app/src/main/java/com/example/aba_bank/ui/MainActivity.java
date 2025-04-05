@@ -1,5 +1,6 @@
 package com.example.aba_bank.ui;
 
+import android.accounts.Account;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -7,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,7 +61,18 @@ public class MainActivity extends AppCompatActivity {
         initNewsRecyclerView();
         initServiceRecyclerView();
         startAutoScroll();
+        navigateScreenInMain();
     }
+
+    private void navigateScreenInMain() {
+        LinearLayout accountLayout,cardLayout,paymentsLayout,qrLayout,favoritesLayout,transferLayout;
+        accountLayout = findViewById(R.id.accountLayout);
+        accountLayout.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this,ABAAccounts.class);
+            startActivity(intent);
+        });
+    }
+
     public void openProfileActivity() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setOnClickListener(v -> {

@@ -13,10 +13,10 @@
 
         <!-- Background and Surface -->
         <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
 
         <!-- Text Colors -->
         <item name="colorOnBackground">@color/colorOnBackground</item>
-        <item name="colorOnSurface">@color/colorOnSurface</item>
 
         <!-- Error Colors -->
         <item name="colorError">@color/colorError</item>
