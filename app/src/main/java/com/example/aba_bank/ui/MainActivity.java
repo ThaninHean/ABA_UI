@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
