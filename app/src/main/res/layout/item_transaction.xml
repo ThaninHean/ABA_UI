@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
@@ -19,8 +20,11 @@
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="12dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:src="@drawable/ic_logo" />
+            android:padding="5dp"
+            android:background="@drawable/bg_color_image"
+            android:src="@drawable/ic_logo"
+            app:tint="@color/colorSurface"
+            tools:ignore="MissingPrefix" />
 
         <LinearLayout
             android:layout_width="0dp"

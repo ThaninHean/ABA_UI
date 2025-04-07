@@ -43,6 +43,9 @@ public class NotificationActivity extends AppCompatActivity {
         bottomSheetDialog = new BottomSheetDialog(NotificationActivity.this);
         bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_notifications, null);
         bottomSheetDialog.setContentView(bottomSheetView);
+
+        // ✅ Handles back button and outside touch dismiss
+        bottomSheetDialog.setOnDismissListener(dialog -> navigateBackToMain());
     }
 
     private void setupRecyclerView() {
@@ -53,13 +56,10 @@ public class NotificationActivity extends AppCompatActivity {
 
     private void setupTabLayout() {
         tabLayout = bottomSheetView.findViewById(R.id.tabLayout);
-
-
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                int position = tab.getPosition();
-                switch (position) {
+                switch (tab.getPosition()) {
                     case 0:
                         recyclerView.setAdapter(new TransactionAdapter(getMyAlerts()));
                         break;
@@ -110,7 +110,6 @@ public class NotificationActivity extends AppCompatActivity {
         list.add(new Transaction("ABA Bank", "New feature: Scan QR to pay", "2 days ago"));
         list.add(new Transaction("ABA Bank", "System maintenance on April 10", "Yesterday"));
         list.add(new Transaction("ABA Bank", "New feature: Scan QR to pay", "2 days ago"));
-
         return list;
     }
 
@@ -119,20 +118,16 @@ public class NotificationActivity extends AppCompatActivity {
         if (internalSheet != null) {
             BottomSheetBehavior<View> behavior = BottomSheetBehavior.from(internalSheet);
             behavior.setHideable(true);
-
             behavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
                 @Override
                 public void onStateChanged(@NonNull View bottomSheet, int newState) {
                     if (newState == BottomSheetBehavior.STATE_HIDDEN) {
                         bottomSheetDialog.dismiss();
-                        navigateBackToMain();
                     }
                 }
 
                 @Override
-                public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-                    // Optional: handle drag animation
-                }
+                public void onSlide(@NonNull View bottomSheet, float slideOffset) {}
             });
         }
     }
@@ -143,4 +138,14 @@ public class NotificationActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    @Override
+    public void onBackPressed() {
+        if (bottomSheetDialog != null && bottomSheetDialog.isShowing()) {
+            bottomSheetDialog.dismiss(); // onDismiss will call navigateBackToMain()
+        } else {
+            super.onBackPressed();
+        }
+    }
+
 }
