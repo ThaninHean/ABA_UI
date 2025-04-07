@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     app:cardCornerRadius="12dp"
-    app:cardElevation="10dp">
+    android:background="#FDFDFD"
+    app:cardElevation="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +19,8 @@
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="12dp"
-            android:src="@drawable/ic_store" />
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/ic_logo" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -31,6 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="SEM CHIM"
+                android:textColor="#484848"
                 android:textStyle="bold" />
 
             <TextView

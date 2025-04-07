@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@drawable/rounded_top_bg"
-    android:padding="16dp">
+    android:padding="10dp">
 
     <View
         android:layout_width="40dp"
@@ -20,17 +21,49 @@
         android:text="ABA Notifications"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
+        android:textColor="@color/colorOnBackground"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_gravity="center"/>
 
-    <TableLayout
+    <!-- TabLayout with 3 tabs -->
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_tab"
+        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorHeight="3dp"
+        app:tabTextColor="@android:color/darker_gray">
 
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_all"
+            android:text="My Alerts"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_income"
+            android:text="Transactions"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_expense"
+
+            android:text="Announcements"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- RecyclerView for transactions -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewTransactions"
         android:layout_width="match_parent"
+        android:background="#EFEFEF"
+        android:layout_marginTop="5dp"
         android:layout_height="wrap_content"/>
 
 </LinearLayout>

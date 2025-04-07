@@ -21,4 +21,7 @@
     <!-- Error Colors -->
     <color name="colorError">#B00020</color> <!-- Red Error Color -->
     <color name="colorOnError">#FFFFFF</color> <!-- White Text on Error -->
+    <color name="aba_red">#ED1C24</color>
+    <color name="white">#FFFFFF</color>
+
 </resources>

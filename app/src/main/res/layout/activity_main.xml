@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="10dp"
-    android:background="#014262"
+    android:background="#004160"
     tools:context=".ui.MainActivity">
     <!--  AppBarLayout with Toolbar  -->
     <com.google.android.material.appbar.AppBarLayout
@@ -61,7 +61,7 @@
             android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#014262"
+            android:background="#003E5E"
             android:paddingStart="5dp"
             android:paddingEnd="5dp"
             android:paddingBottom="10dp">
@@ -73,7 +73,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="5dp"
-                android:backgroundTint="#3CDEDEE4"
+                android:backgroundTint="#3F6C7E"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="5dp"
                 app:layout_constraintEnd_toEndOf="parent"

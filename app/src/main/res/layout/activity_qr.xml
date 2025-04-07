@@ -4,13 +4,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#014262"
+    android:background="#212A2C"
     tools:context=".ui.QrActivity">
     <!--  Cancel Button  -->
     <ImageView
         android:id="@+id/cancel"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,8 +36,8 @@
             android:layout_height="wrap_content"
             android:text="ABA'QR"
             android:textAlignment="center"
-            android:textColor="@color/colorOnSurface"
-            android:textSize="32sp"
+            android:textColor="@color/colorOnPrimary"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
@@ -47,7 +47,7 @@
             android:layout_marginTop="8dp"
             android:text="Use this QR to receive money from friends or transfer funds from your other banking app"
             android:textAlignment="center"
-            android:textColor="@color/colorOnSurface"
+            android:textColor="@color/colorOnPrimary"
             android:textSize="15sp" />
     </LinearLayout>
     <!--  QR Card  -->
@@ -76,6 +76,8 @@
                 android:text="KHQR"
                 android:textSize="30sp"
                 android:textStyle="bold"
+                android:textColor="@color/colorSurface"
+                android:background="@color/aba_red"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.492"
                 app:layout_constraintStart_toStartOf="parent"
@@ -132,10 +134,10 @@
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#0091EA"
+        android:backgroundTint="#2A666E"
         android:gravity="center"
         android:text="ADD AMOUNT"
-        android:textColor="#FFFFFF"
+        android:textColor="#01B6CB"
         android:textStyle="bold"
         app:cornerRadius="10dp"
         app:icon="@drawable/ic_add"
@@ -151,7 +153,7 @@
         android:layout_marginTop="15dp"
         android:text="Receive to: 0962603961 | USD"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/colorSurface"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/addAmountButton"
         app:layout_constraintStart_toStartOf="@+id/addAmountButton"
