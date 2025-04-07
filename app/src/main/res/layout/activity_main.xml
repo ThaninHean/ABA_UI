@@ -237,17 +237,19 @@
                     app:layout_rowWeight="1">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/ic_account" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Accounts"
+                        android:autoSizeMaxTextSize="16sp"
                         android:fontFamily="sans-serif-medium"
+                        android:text="Accounts"
                         android:textAlignment="center"
-                        android:textColor="@color/colorOnSurface" />
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -263,15 +265,16 @@
                     app:layout_rowWeight="1">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/ic_cards" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cards"
+                        android:autoSizeMaxTextSize="16sp"
                         android:fontFamily="sans-serif-medium"
+                        android:text="Cards"
                         android:textAlignment="center"
                         android:textColor="@color/colorOnSurface" />
                 </LinearLayout>
@@ -289,13 +292,14 @@
                     app:layout_rowWeight="1">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/ic_payments" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:autoSizeMaxTextSize="16sp"
                         android:fontFamily="sans-serif-medium"
                         android:text="Payments"
                         android:textAlignment="center"
@@ -315,13 +319,14 @@
                     app:layout_rowWeight="1">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/ic_scan" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:autoSizeMaxTextSize="16sp"
                         android:fontFamily="sans-serif-medium"
                         android:text="ABA Scan"
                         android:textAlignment="center"
@@ -341,13 +346,14 @@
                     app:layout_rowWeight="1">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/ic_favorites" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:autoSizeMaxTextSize="16sp"
                         android:fontFamily="sans-serif-medium"
                         android:text="Favorites"
                         android:textAlignment="center"
@@ -367,13 +373,14 @@
                     app:layout_rowWeight="1">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/ic_transfers" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:autoSizeMaxTextSize="16sp"
                         android:fontFamily="sans-serif-medium"
                         android:text="Transfers"
                         android:textAlignment="center"
