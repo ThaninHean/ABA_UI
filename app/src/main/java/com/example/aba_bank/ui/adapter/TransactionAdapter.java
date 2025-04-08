@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aba_bank.R;
+import com.example.aba_bank.ui.model.Announcements;
 import com.example.aba_bank.ui.model.Transaction;
 
 import java.util.List;

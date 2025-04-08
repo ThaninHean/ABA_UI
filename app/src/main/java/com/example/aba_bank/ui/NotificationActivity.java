@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aba_bank.R;
+import com.example.aba_bank.ui.adapter.AnnouncementAdapter;
 import com.example.aba_bank.ui.adapter.TransactionAdapter;
+import com.example.aba_bank.ui.model.Announcements;
 import com.example.aba_bank.ui.model.Transaction;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -24,7 +26,7 @@ public class NotificationActivity extends AppCompatActivity {
 
     private BottomSheetDialog bottomSheetDialog;
     private View bottomSheetView;
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerView,recyclerViewAnnouncements;
     private TabLayout tabLayout;
 
     @Override
@@ -51,7 +53,12 @@ public class NotificationActivity extends AppCompatActivity {
     private void setupRecyclerView() {
         recyclerView = bottomSheetView.findViewById(R.id.recyclerViewTransactions);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new TransactionAdapter(getMyAlerts()));
+        recyclerView.setAdapter(new TransactionAdapter(getTransactions()));
+    }
+    private void setupRecyclerViewForAnnouncement() {
+        recyclerViewAnnouncements = bottomSheetView.findViewById(R.id.recyclerViewTransactions);
+        recyclerViewAnnouncements.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewAnnouncements.setAdapter(new AnnouncementAdapter(getAnnouncements()));
     }
 
     private void setupTabLayout() {
@@ -67,7 +74,7 @@ public class NotificationActivity extends AppCompatActivity {
                         recyclerView.setAdapter(new TransactionAdapter(getTransactions()));
                         break;
                     case 2:
-                        recyclerView.setAdapter(new TransactionAdapter(getAnnouncements()));
+                        recyclerView.setAdapter(new AnnouncementAdapter(getAnnouncements()));
                         break;
                 }
             }
@@ -102,16 +109,17 @@ public class NotificationActivity extends AppCompatActivity {
         return list;
     }
 
-    private List<Transaction> getAnnouncements() {
-        List<Transaction> list = new ArrayList<>();
-        list.add(new Transaction("ABA Bank", "System maintenance on April 10", "Yesterday"));
-        list.add(new Transaction("ABA Bank", "New feature: Scan QR to pay", "2 days ago"));
-        list.add(new Transaction("ABA Bank", "System maintenance on April 10", "Yesterday"));
-        list.add(new Transaction("ABA Bank", "New feature: Scan QR to pay", "2 days ago"));
-        list.add(new Transaction("ABA Bank", "System maintenance on April 10", "Yesterday"));
-        list.add(new Transaction("ABA Bank", "New feature: Scan QR to pay", "2 days ago"));
+    private List<Announcements> getAnnouncements() {
+        List<Announcements> list = new ArrayList<>();
+        list.add(new Announcements("03 APR 2025", R.drawable.image2, "Difference", "Scheduled update at 2 AM"));
+        list.add(new Announcements("02 MAR 2025", R.drawable.image3, "System Maintenance", "We will update at 2 AM"));
+        list.add(new Announcements("05 JUN 2025", R.drawable.image4, "System Maintenance", "We will update at 2 AM"));
+        list.add(new Announcements("06 ACO 2025", R.drawable.image5, "មោទនភាពខ្មែរុះ", "29 NOV 2024"));
+        list.add(new Announcements("08 DEC 2025", R.drawable.image6, "Service Interruption", "Maintenance scheduled for 4 AM"));
+
         return list;
     }
+
 
     private void handleBottomSheetDismiss() {
         View internalSheet = bottomSheetDialog.getDelegate().findViewById(com.google.android.material.R.id.design_bottom_sheet);

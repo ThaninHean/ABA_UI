@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <!-- Date -->
+
+    <!-- Card Container -->
+
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="220dp"
+        android:text="03 APR 2025"
+        android:textColor="#555"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/bannerCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textDate"
+        android:layout_marginTop="12dp"
+        android:padding="12dp"
+
+        android:elevation="4dp">
+
+        <!-- Banner Image -->
+        <ImageView
+            android:id="@+id/bannerImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="352dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtDescription"
+            android:layout_alignStart="@+id/bannerImage"
+            android:layout_alignEnd="@+id/bannerImage"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="5dp"
+            android:text="Celebrate joy &amp; prosperity with ABA"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/bannerImage"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="Get ready for a joyful Khmer New Year with ..."
+            android:textColor="#777"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
