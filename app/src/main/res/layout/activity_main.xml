@@ -69,7 +69,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="150dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="5dp"
@@ -157,11 +157,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:paddingEnd="10dp"
+                        android:paddingEnd="5dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent">
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                        app:layout_constraintVertical_bias="0.644">
 
                         <LinearLayout
                             android:id="@+id/firstLayout"
@@ -176,9 +178,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/ic_receive_money"
                                 android:fontFamily="sans-serif-medium"
                                 android:text="Receive Money"
-                                android:drawableStart="@drawable/ic_receive_money"
                                 android:textColor="@color/colorOnSurface"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -188,17 +190,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginStart="60dp"
-                            android:orientation="horizontal"
                             android:gravity="center"
+                            android:orientation="horizontal"
                             app:layout_constraintStart_toEndOf="@+id/firstLayout"
                             app:layout_constraintTop_toTopOf="parent">
 
                             <TextView
-                                android:layout_width="116dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Send Money"
                                 android:drawableStart="@drawable/ic_send_money"
                                 android:fontFamily="sans-serif-medium"
+                                android:text="Send Money"
                                 android:textColor="@color/colorOnSurface"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />

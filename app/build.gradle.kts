@@ -32,6 +32,7 @@ android {
 }
 
 dependencies {
+    implementation ("com.google.android.material:material:1.11.0")
     implementation ("com.github.bumptech.glide:glide:4.15.1")
     implementation(libs.legacy.support.v4)
     implementation(libs.car.ui.lib)

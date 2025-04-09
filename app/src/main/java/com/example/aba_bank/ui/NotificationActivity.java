@@ -37,7 +37,7 @@ public class NotificationActivity extends AppCompatActivity {
 
         setupBottomSheet();
         setupTabLayout();
-        setupRecyclerView(getTransactions()); // Default content
+        setupRecyclerView(getTransactions()); // Load default tab
         handleBottomSheetDismiss();
 
         bottomSheetDialog.show();
@@ -52,19 +52,6 @@ public class NotificationActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         bottomSheetDialog.setOnDismissListener(dialog -> navigateBackToMain());
-    }
-
-    private void setupRecyclerView(Object items) {
-        if (items instanceof List<?>) {
-            if (!((List<?>) items).isEmpty()) {
-                Object firstItem = ((List<?>) items).get(0);
-                if (firstItem instanceof Transaction) {
-                    recyclerView.setAdapter(new TransactionAdapter((List<Transaction>) items));
-                } else if (firstItem instanceof Announcements) {
-                    recyclerView.setAdapter(new AnnouncementAdapter((List<Announcements>) items));
-                }
-            }
-        }
     }
 
     private void setupTabLayout() {
@@ -85,9 +72,26 @@ public class NotificationActivity extends AppCompatActivity {
                 }
             }
 
-            @Override public void onTabUnselected(TabLayout.Tab tab) {}
-            @Override public void onTabReselected(TabLayout.Tab tab) {}
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) { }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) { }
         });
+    }
+
+    private void setupRecyclerView(Object items) {
+        if (items instanceof List<?>) {
+            List<?> list = (List<?>) items;
+            if (!list.isEmpty()) {
+                Object firstItem = list.get(0);
+                if (firstItem instanceof Transaction) {
+                    recyclerView.setAdapter(new TransactionAdapter((List<Transaction>) list));
+                } else if (firstItem instanceof Announcements) {
+                    recyclerView.setAdapter(new AnnouncementAdapter((List<Announcements>) list));
+                }
+            }
+        }
     }
 
     private List<Transaction> getMyAlerts() {
@@ -110,9 +114,15 @@ public class NotificationActivity extends AppCompatActivity {
 
     private List<Announcements> getAnnouncements() {
         List<Announcements> list = new ArrayList<>();
-        list.add(new Announcements("15 AUG 2024", R.drawable.banner1, "ឱ្យអ្នកស្គាល់ទាំងអស់ប្រើABA បានលុយ", "បាន ៥០០០ រៀល ពេលណែនាំមិត្តភក្កិ គ្រួសារ ឬអ្នកណាម្នាក់"));
-        list.add(new Announcements("13 FEB 2025", R.drawable.banner2, "ជំនួយការផ្ទាល់ខ្លួនរបស់អ្នក", "ដឹងអត់? អ្នកមានជំនួយការផ្ទាល់មួយ សម្រាប់បម្រើសេវាកម្ម"));
-        list.add(new Announcements("02 MAR 2025", R.drawable.banner3, "Celebrate joy & prosperity with ABA", "Get ready for a joyful Khmer New Year with"));
+        list.add(new Announcements("15 AUG 2024", R.drawable.banner1,
+                "ឱ្យអ្នកស្គាល់ទាំងអស់ប្រើABA បានលុយ",
+                "បាន ៥០០០ រៀល ពេលណែនាំមិត្តភក្កិ គ្រួសារ ឬអ្នកណាម្នាក់"));
+        list.add(new Announcements("13 FEB 2025", R.drawable.banner2,
+                "ជំនួយការផ្ទាល់ខ្លួនរបស់អ្នក",
+                "ដឹងអត់? អ្នកមានជំនួយការផ្ទាល់មួយ សម្រាប់បម្រើសេវាកម្ម"));
+        list.add(new Announcements("02 MAR 2025", R.drawable.banner3,
+                "Celebrate joy & prosperity with ABA",
+                "Get ready for a joyful Khmer New Year with"));
         return list;
     }
 
@@ -129,7 +139,8 @@ public class NotificationActivity extends AppCompatActivity {
                     }
                 }
 
-                @Override public void onSlide(@NonNull View bottomSheet, float slideOffset) {}
+                @Override
+                public void onSlide(@NonNull View bottomSheet, float slideOffset) { }
             });
         }
     }
@@ -144,7 +155,7 @@ public class NotificationActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (bottomSheetDialog != null && bottomSheetDialog.isShowing()) {
-            bottomSheetDialog.dismiss(); // Triggers navigateBackToMain
+            bottomSheetDialog.dismiss();
         } else {
             super.onBackPressed();
         }
