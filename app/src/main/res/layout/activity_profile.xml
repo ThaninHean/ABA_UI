@@ -26,8 +26,8 @@
 
         <TextView
             android:id="@+id/close"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginEnd="8dp"
             android:drawableLeft="@drawable/ic_close"
             android:drawableTint="@color/colorOnPrimary"
@@ -128,7 +128,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
