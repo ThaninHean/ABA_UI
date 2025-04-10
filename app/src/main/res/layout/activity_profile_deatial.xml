@@ -83,7 +83,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginEnd="10dp"
-                            app:srcCompat="@drawable/ic_chat" />
+                            app:srcCompat="@drawable/ic_contact" />
 
                         <TextView
                             android:id="@+id/textNum"
@@ -110,7 +110,7 @@
                         android:layout_marginStart="34dp"
                         android:justificationMode="inter_word"
                         android:text="Always keep the phone number updated or you may lose access to your ABA Mobile."
-                        android:textSize="16sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -208,7 +208,7 @@
                             android:layout_height="wrap_content"
                             android:text="thaninhean99@gmial.com"
                             android:textColor="#222222"
-                            android:textSize="14sp" />
+                            android:textSize="13sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -243,7 +243,7 @@
                             android:layout_height="wrap_content"
                             android:text="Phnom Penh"
                             android:textColor="#222222"
-                            android:textSize="14sp" />
+                            android:textSize="13sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -278,7 +278,7 @@
                             android:layout_height="wrap_content"
                             android:text="Boeng Keng Kang Ti Mouy"
                             android:textColor="#222222"
-                            android:textSize="14sp" />
+                            android:textSize="13sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -348,7 +348,7 @@
                             android:layout_height="wrap_content"
                             android:text="Phum 3"
                             android:textColor="#222222"
-                            android:textSize="14sp" />
+                            android:textSize="13sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -383,7 +383,7 @@
                             android:layout_height="wrap_content"
                             android:text="21"
                             android:textColor="#222222"
-                            android:textSize="14sp" />
+                            android:textSize="13sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -417,7 +417,7 @@
                             android:layout_height="wrap_content"
                             android:text="274"
                             android:textColor="#222222"
-                            android:textSize="14sp" />
+                            android:textSize="13sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -459,7 +459,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Student"
                                 android:textColor="#222222"
-                                android:textSize="14sp" />
+                                android:textSize="13sp" />
                         </LinearLayout>
                     </LinearLayout>
                     <LinearLayout
@@ -531,7 +531,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Support from Family"
                                 android:textColor="#222222"
-                                android:textSize="14sp" />
+                                android:textSize="13sp" />
                         </LinearLayout>
                     </LinearLayout>
                     <LinearLayout
@@ -567,7 +567,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="> 100-500 dollars"
                                 android:textColor="#222222"
-                                android:textSize="14sp" />
+                                android:textSize="13sp" />
                         </LinearLayout>
                     </LinearLayout>
 
